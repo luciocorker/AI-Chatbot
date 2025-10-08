@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="stylesheet" href="/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebTechniks Chatbot</title>
-    <style></style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>WebTechnicks Chatbot</h1>
+    <h1>Lucio's AI Chatbot</h1>
+    
+    <div class="chatbot-container">
+        <div class="loading-container" id="loadingContainer">
+            <div class="loading-dots">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
 
 
 
 
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  intent="WELCOME"
-  chat-title="WebTechniks"
-  agent-id="2ca38f59-7b52-41a0-8f4d-d05999159616"
-  language-code="en"
-></df-messenger>
+        <df-messenger
+            intent="WELCOME"
+            chat-title="WebTechniks"
+            agent-id="2ca38f59-7b52-41a0-8f4d-d05999159616"
+            language-code="en"
+        ></df-messenger>
+    </div>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <script>
+        // Hide loading animation once chatbot loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const loadingContainer = document.getElementById('loadingContainer');
+                if (loadingContainer) {
+                    loadingContainer.style.display = 'none';
+                }
+            }, 2000);
+        });
+    </script>
 </body>
 </html>
